@@ -28,7 +28,7 @@ Ademas de las funcionalidades, cuenta con un area de texto o del programa en el 
 
 </p>  
 
-Al presionar el boton abrir, se desplega un cuadro de dialogo, en el que el usuario podra seleccionar cualquier tipo de archivo, unicamente con la restriccion detallada, que el tipo de archivo que acepta el programa es unicamente con extensi+on "LFP". Cualquier otro tipo de archivo, no se podra cargar en el sistema.
+Al presionar el boton abrir, se desplega un cuadro de dialogo, en el que el usuario podra seleccionar cualquier tipo de archivo, unicamente con la restriccion detallada, que el tipo de archivo que acepta el programa es unicamente con extension "JSON". Cualquier otro tipo de archivo, no se podra cargar en el sistema.
 
 ## Opciones Guardar y Guardar Como
 
@@ -54,7 +54,7 @@ Entre las opciones de guardado:
 
 ## Boton Analizar
 
-Al presionar el botón "Analizar", el programa analizara el contenido actual en el area de texto, y automaticamente generara un archivo html, que se encontrara visible en la carpeta "json", con un nombre especifico.
+Al presionar el botón "Analizar", el programa analizara el contenido actual en el area de texto, y automaticamente generara un archivo json, que se encontrara visible en la carpeta "json", con un nombre especifico.
 
 ![creditos]
 <p align="center">
@@ -64,7 +64,7 @@ Al presionar el botón "Analizar", el programa analizara el contenido actual en 
 
 ## Boton Errores
 
-Al presionar el botón "Errores", el programa analizara cada uno de los errores en cualquier parte del contenido visible en el archivo de texto y automaticamente generara un archivo html, con el nombbre ERRORES_202104782
+Al presionar el botón "Errores", el programa analizara cada uno de los errores en cualquier parte del contenido visible en el archivo de texto y automaticamente generara un archivo json, con el nombbre ERRORES_202104782
 
 ![creditos]
 <p align="center">

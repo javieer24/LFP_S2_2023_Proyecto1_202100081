@@ -271,7 +271,7 @@ class JsonFile:
 
 ```
 
-La clase HtmlFile, es la encargada de recibir los atributos que se le han enviado desde el analizador lexico, con el unico fin de generar un archivo html que sea legible e intuitivo para el usuario, transformando toda la informacion en este lenguaje, y asi poder generar un archivo html, implementando el modulo webbrowser.
+La clase JsonFile, es la encargada de recibir los atributos que se le han enviado desde el analizador lexico, con el unico fin de generar un archivo json que sea legible e intuitivo para el usuario, transformando toda la informacion en este lenguaje, y asi poder generar un archivo json.
 
 ## **Diccionario de Funciones**
 
@@ -300,7 +300,7 @@ La clase HtmlFile, es la encargada de recibir los atributos que se le han enviad
             
 ```
 
-La función openFile, añade a la variable global self.file, la ruta del archivo que se va abrir al momento de llamar al modulo filedialog(). Posteriormente verifica que el archivo que se va abrir sea con extension LFP, de lo contrario, no se podra abrir ningun archivo.
+La función openFile, añade a la variable global self.file, la ruta del archivo que se va abrir al momento de llamar al modulo filedialog(). Posteriormente verifica que el archivo que se va abrir sea con extension JSON, de lo contrario, no se podra abrir ningun archivo.
 
 Esta funcion es la encargada de añadir todo el contenido del archivo en el area de texto, que se encuentra en el programa.
 
@@ -402,7 +402,7 @@ Primeramente esta función es la encargada de verificar que dentro del area de t
 
 Posteriormente crea una variable y se la envia al analizador lexico, para la generacion de tokens, y lexemas que se utilizaran a lo largo de todo el programa.
 
-Luego mediante iteraciones se obtienen cada uno de los parametros pertencientes a Tipo, Funcion y Texto que se encuentran en el archivo de entrada, y alamcena sus datos en listas nativas, para enviarselos al modulo de generacion de archivos html.
+Luego mediante iteraciones se obtienen cada uno de los parametros pertencientes a Tipo, Funcion y Texto que se encuentran en el archivo de entrada, y alamcena sus datos en listas nativas, para enviarselos al modulo de generacion de archivos json.
 
 ### **Función parse_errores_file**
 
@@ -434,6 +434,6 @@ Luego mediante iteraciones se obtienen cada uno de los parametros pertencientes 
 
 ```
 
-Esta funcion es la encargada primeramente de verificar que el area de texto no se encuentre vacia. Posterior a ello, itera en la lista de errores global que ha sido creada en el analizador lexico. Esto con el fin de poder mandar esta lista a la clase html, y poder generar la tabla necesaria para verificar cada uno de los errores pertenecientes en el archivo de entrada.
+Esta funcion es la encargada primeramente de verificar que el area de texto no se encuentre vacia. Posterior a ello, itera en la lista de errores global que ha sido creada en el analizador lexico. Esto con el fin de poder mandar esta lista a la clase json, y poder generar la tabla necesaria para verificar cada uno de los errores pertenecientes en el archivo de entrada.
 
 
