@@ -5,7 +5,9 @@ from analizador_lexico import *
 from errores import *
 from aritmeticas import *
 import files_json as JsonFile
+from files_json import *
 import os
+import tkinter as messagebox
 
 class App(tk.Tk):
 
@@ -56,7 +58,7 @@ class App(tk.Tk):
                 
         # Funcion para guardar archivo con otro nombre
         def save_asFile():
-            new_file = filedialog.asksaveasfilename(defaultextension="xml", 
+            new_file = filedialog.asksaveasfilename(defaultextension="json", 
             filetypes=[("Archivos JSON", "*.json"), ("Todos los archivos", "*.*")]) #Cuadro de dialogo
 
             if not new_file: #Validar que se este guardando un archivo
@@ -118,6 +120,16 @@ class App(tk.Tk):
                 JsonFile.create_ResultadosJSON(texto, title_operaciones, operaciones, expre, estilo)
 
                 messagebox.showinfo("Analizador", "Archivo Analizado correctamente")
+                
+                operaciones =[]
+                for var in variable:
+                    if isinstance(var, list):
+                        for var_ in var:
+                            print(f"Operacion {n}: ")
+                            operaciones.append(f"Operacion {n}: ")
+                            print(var_.ejecutar(True))
+                            n+=1
+                return operaciones
 
         # Funcion para verificar errores
         def parse_errores_File():
@@ -142,7 +154,7 @@ class App(tk.Tk):
                 messagebox.showinfo("Errores", "Archivo 'json' generado correctamente")
 
             print(_error)
-            JsonFile.create_ErroresHtml(_error)
+            JsonFile.create_ErroresJson(_error)
 
         #Create buttons
         btn_abrir = tk.Button(self, text="ABRIR", command = openFile ,font=("Berlin Sans FB Demi", 13, "bold"), bg="#000000", fg="white")
@@ -152,18 +164,10 @@ class App(tk.Tk):
         btn_errores = tk.Button(self, text="ERRORES", command = parse_errores_File,font=("Berlin Sans FB Demi", 13, "bold"), bg="#000000", fg="white")
         btn_salir = tk.Button(self, text="SALIR", command = lambda: self.quit(),  font=("Berlin Sans FB Demi", 13, "bold"), bg="#000000", fg="white")
 
+
         #Create Text area
         txt_area = tk.Text(self, bg="#b0bec5", font=("Calisto MT", 12), padx=20, pady=20)
 
-        # Eventos de combobox
-        def selection_changed1(event):
-            selection_changed1 = cmb_ayuda.get()
-            if selection_changed1 == "Abrir":
-                    openFile()
-            elif selection_changed1 == "Guardar":
-                    saveFile()
-            elif selection_changed1 == "Guardar Como":
-                save_asFile()
 
         # Eventos de combobox
         def selection_changed(event):
@@ -171,35 +175,9 @@ class App(tk.Tk):
             if selection == "Autor":
                 messagebox.showinfo(
                     title="Autor",
-                message="Curso: Laboratorio de lenguajes Formales y de Programación \nSeccion: B- \nNombre: Javier Andrés Monjes Solórzano \nCarnet: 202100081"
+                message="Curso: Laboratorio de enguajes Formales y de Programación \nSeccion: B- \nNombre: Javier Andrés Monjes Solórzano \nCarnet: 202100081"
                 )
-        
-        #Create first combobox
-        style = ttk.Style()
-        style.theme_create('combostyle', parent='alt',
-                                settings = {'TCombobox':
-                                            {'configure':
-                                            {'selectbackground': '#000000',
-                                            'fieldbackground': '#000000',
-                                            'background': '#000000'
-                                            }}})
-        style.theme_use('combostyle')
-        options = ["Abrir", "Guardar", "Guardar Como"] #Lista de opciones
-        cmb_ayuda = ttk.Combobox(self, values = options, foreground="White",  font= ("Berlin Sans FB Demi", 13, "bold"), justify = "center", state = "readonly")
-        cmb_ayuda.current(0)
-
-        cmb_ayuda.bind("<<ComboboxSelected>>", selection_changed)
-
-        #Ubicacion widgets
-        btn_abrir.grid(row=0, column=0, sticky="nsew")
-        btn_guardar.grid(row=0, column=1, sticky="nsew")
-        btn_guardar_como.grid(row=0, column=2, sticky="nsew")
-        btn_analizar.grid(row=0, column=3, sticky="nsew")
-        btn_errores.grid(row=0, column=4, sticky="nsew")
-        btn_salir.grid(row=2, column=5, sticky="nsew", padx=15, pady=15)
-        cmb_ayuda.grid(row=0, column=5, sticky="nsew")
-        txt_area.grid(row=1, column=0, columnspan=6, padx=15, pady=15)
-        
+    
         
         #Create second combobox
         style = ttk.Style()
@@ -207,7 +185,7 @@ class App(tk.Tk):
                                 settings = {'TCombobox':
                                             {'configure':
                                             {'selectbackground': '#000000',
-                                            'fieldbackground': '#000000',
+                                            'fieldbackground': '#87CEEB',
                                             'background': '#000000'
                                             }}})
         style.theme_use('combostyle') 
