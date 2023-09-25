@@ -17,3 +17,6 @@ Correo:3020696740101@ingenieria.usac.edu.gt
     </ul>
   </li>
 </ul>
+
+El presente proyecto consiste en el desarrollo de un analizador léxico para un lenguaje de programación de propósito general. El analizador debe ser capaz de identificar los tokens del lenguaje, así como los errores léxicos. Además, debe ser capaz de ejecutar las instrucciones del lenguaje de acuerdo con su sintaxis, y generar un archivo JSON con los resultados de la ejecución.
+
