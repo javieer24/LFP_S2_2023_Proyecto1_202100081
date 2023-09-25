@@ -175,7 +175,7 @@ class App(tk.Tk):
             if selection == "Autor":
                 messagebox.showinfo(
                     title="Autor",
-                message="Curso: Laboratorio de enguajes Formales y de Programación \nSeccion: B- \nNombre: Javier Andrés Monjes Solórzano \nCarnet: 202100081"
+                message="Curso: Laboratorio de Lnguajes Formales y de Programación \nSeccion: B- \nNombre: Javier Andrés Monjes Solórzano \nCarnet: 202100081"
                 )
     
         
