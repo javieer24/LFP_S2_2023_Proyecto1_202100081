@@ -56,10 +56,7 @@ Entre las opciones de guardado:
 
 Al presionar el botón "Analizar", el programa analizara el contenido actual en el area de texto, y automaticamente generara un archivo json, que se encontrara visible en la carpeta "json", con un nombre especifico.
 
-![creditos]
-<p align="center">
-    <img src="analisis.png">
-</p>  
+
 
 
 ## Boton Errores
